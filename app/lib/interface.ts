@@ -1,4 +1,4 @@
-import { Any } from "next-sanity";
+import {any} from "next-sanity";
 
 export interface simpleBlogCard{
     title: string;

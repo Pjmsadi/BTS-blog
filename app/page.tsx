@@ -2,12 +2,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Client } from './lib/sanity'; // Sanity client import
 import imageUrlBuilder from '@sanity/image-url'; // Sanity image URL builder
 import Image from 'next/image'; // Next.js Image component
+import { Any } from 'next-sanity';
 
 // Image URL builder setup
 const builder = imageUrlBuilder(Client);
 
 // Ye function Sanity image ka URL banayega
-export function urlFor(source: any) {
+export function urlFor(source: Any) {
   return builder.image(source);
 }
 
@@ -31,7 +32,7 @@ export default async function Home() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
-      {data.map((post: any, idx: number) => (
+      {data.map((post: Any, idx: number) => (
         <Card key={idx}>
           {/* Blog Image */}
           <Image
