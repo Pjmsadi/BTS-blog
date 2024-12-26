@@ -3,7 +3,6 @@ import { Client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "next-sanity";
 import Image from 'next/image';
 
-
 async function getData(slug: string): Promise<fullBlog | null> {
   // Use a parameterized query to prevent injection risks
   const query = `

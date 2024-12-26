@@ -2,13 +2,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Client } from './lib/sanity'; // Sanity client import
 import imageUrlBuilder from '@sanity/image-url'; // Sanity image URL builder
 import Image from 'next/image'; // Next.js Image component
-import { Any } from 'next-sanity';
+import { } from 'next-sanity';
 
 // Image URL builder setup
 const builder = imageUrlBuilder(Client);
 
 // Ye function Sanity image ka URL banayega
-export function urlFor(source: any) {
+export function urlFor({ source }: { source: any; }) {
   return builder.image(source);
 }
 
@@ -36,7 +36,7 @@ export default async function Home() {
         <Card key={idx}>
           {/* Blog Image */}
           <Image
-            src={urlFor(post.titleImage).url()} // Generate URL
+            src={urlFor({ source: post.titleImage }).url()} // Generate URL
             alt="image" // Default alt text
             width={400} // Image width
             height={300} // Image height
