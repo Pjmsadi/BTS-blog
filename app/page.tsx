@@ -8,7 +8,7 @@ import { Any } from 'next-sanity';
 const builder = imageUrlBuilder(Client);
 
 // Ye function Sanity image ka URL banayega
-export function urlFor(source: Any) {
+export function urlFor(source: any) {
   return builder.image(source);
 }
 
@@ -32,7 +32,7 @@ export default async function Home() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
-      {data.map((post: Any, idx: number) => (
+      {data.map((post: any, idx: number) => (
         <Card key={idx}>
           {/* Blog Image */}
           <Image

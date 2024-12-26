@@ -1,15 +1,15 @@
-import { Any } from "next-sanity";
+import { } from "next-sanity";
 
 export interface simpleBlogCard{
     title: string;
     smallDescription: string;
     currentSlug: string;
-    titleImage: Any;
+    titleImage: any;
 }
 export interface fullBlog {
     currentSlug: string;
     title: string;
-    content: Any;
-    titleImage: Any;
+    content: any;
+    titleImage: any;
 
 }
