@@ -8,7 +8,7 @@ import { } from 'next-sanity';
 const builder = imageUrlBuilder(Client);
 
 // Ye function Sanity image ka URL banayega
-export function urlFor({ source }: { source: any; }) {
+export function url({ source }: { source: any; }) {
   return builder.image(source);
 }
 
@@ -36,7 +36,7 @@ export default async function Home() {
         <Card key={idx}>
           {/* Blog Image */}
           <Image
-            src={urlFor({ source: post.titleImage }).url()} // Generate URL
+            src={url({ source: post.titleImage }).url()} // Generate URL
             alt="image" // Default alt text
             width={400} // Image width
             height={300} // Image height
