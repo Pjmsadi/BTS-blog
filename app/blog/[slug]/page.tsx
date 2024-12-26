@@ -3,6 +3,7 @@ import { Client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "next-sanity";
 import Image from 'next/image';
 
+
 async function getData(slug: string): Promise<fullBlog | null> {
   // Use a parameterized query to prevent injection risks
   const query = `
@@ -24,7 +25,7 @@ export default async function BlogArticle({ params }: { params: { slug: string }
     return (
       <div className="mt-8 text-center">
         <h1 className="text-2xl font-bold">Blog not found</h1>
-        <p className="mt-4">Sorry, the blog you’re looking for does not exist.</p>
+        <p className="mt-4">Sorry, the blog you are looking for does not exist.</p>
       </div>
     );
   }
