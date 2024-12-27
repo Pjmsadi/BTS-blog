@@ -7,7 +7,12 @@ export default function Navbar() {
       <Link href="/" className="font-bold text-3xl">
         BTS<span className="text-primary">Blog</span>
       </Link>
-      <ModeToggle />
+      <div className="flex items-center space-x-4">
+        <Link href="/menu" className="text-lg">
+          Menu
+        </Link>
+        <ModeToggle />
+      </div>
     </nav>
   );
 }

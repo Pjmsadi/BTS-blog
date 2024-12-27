@@ -4,7 +4,7 @@ export default {
     title: 'Blog',
     fields: [
         {
-            name: 'title', // Fixed typo here
+            name: 'title',
             type: 'string',
             title: 'Title of blog article',
         },
@@ -13,7 +13,7 @@ export default {
             type: 'slug',
             title: 'Slug of your blog article',
             options: {
-                source: 'title', // Points to the correct 'title' field
+                source: 'title',
             },
         },
         {
@@ -33,6 +33,34 @@ export default {
             of: [
                 {
                     type: 'block',
+                },
+            ],
+        },
+        {
+            name: 'comments',
+            type: 'array',
+            title: 'Comments',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'name',
+                            type: 'string',
+                            title: 'Name',
+                        },
+                        {
+                            name: 'comment',
+                            type: 'text',
+                            title: 'Comment',
+                        },
+                        {
+                            name: 'approved',
+                            type: 'boolean',
+                            title: 'Approved',
+                            description: 'Comments won\'t show on the site without approval',
+                        },
+                    ],
                 },
             ],
         },

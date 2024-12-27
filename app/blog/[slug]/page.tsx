@@ -5,13 +5,18 @@ import Image from 'next/image';
 
 async function getData(slug: string): Promise<fullBlog | null> {
   // Use a parameterized query to prevent injection risks
-  const query = `
-    *[_type == "blog" && slug.current == $slug]{
-      "currentSlug": slug.current,
-      title,
-      content,
-      titleImage
-    }[0]
+  const query = `*[_type == "blog" && slug.current == '${slug}']{
+  "currentSlug": slug.current,
+  title,
+  content,
+  titleImage,
+  comments[] {
+    _key,
+    name,
+    comment,
+    _createdAt
+  }
+}[0]
   `;
   const data = await Client.fetch(query, { slug });
   return data;
