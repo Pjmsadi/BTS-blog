@@ -1,15 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Client } from './lib/sanity'; // Sanity client import
-import imageUrlBuilder from '@sanity/image-url'; // Sanity image URL builder
+import { Client, urlFor } from './lib/sanity'; // Sanity client import
 import Image from 'next/image'; // Next.js Image component
-
-// Image URL builder setup
-const builder = imageUrlBuilder(Client);
-
-// Function to generate Sanity image URL
-export function urlFor(source: any) {
-  return builder.image(source).url();
-}
 
 // Function to fetch data
 async function getData() {
@@ -34,7 +25,7 @@ export default async function Home() {
         <Card key={idx}>
           {/* Blog Image */}
           <Image
-            src={urlFor(post.titleImage)} // Generate URL
+            src={urlFor(post.titleImage).url()} // Generate URL
             alt={post.title} // Use post title as alt text
             width={400} // Image width
             height={300} // Image height
