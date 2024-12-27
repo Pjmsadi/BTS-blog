@@ -8,7 +8,7 @@ const MenuPage: React.FC = () => {
             <ul className="space-y-6">
                 {['Home', 'About', 'Blog', 'Contact'].map((item) => (
                     <li key={item}>
-                        <Link href={`/${item.toLowerCase()}`}>
+                        <Link legacyBehavior href={`/${item.toLowerCase()}`}>
                             <a className="text-2xl font-semibold hover:text-yellow-300 transition duration-300 ease-in-out transform hover:scale-110">{item}</a>
                         </Link>
                     </li>
